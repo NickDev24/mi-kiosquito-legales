@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitud de Eliminación de Datos - Mi Kiosquito</title>
+  <style>
+    :root {
+      --color-primary: #2D8A4E;
+      --color-accent: #F27D28;
+      --color-text: #1A1A1A;
+      --color-muted: #6B7280;
+      --color-bg: #F8F7F4;
+      --color-card: #FFFFFF;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--color-primary);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 8px; font-size: 1.75rem; }
+    header a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.9;
+      font-size: 0.9rem;
+    }
+    main {
+      max-width: 600px;
+      margin: 32px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: var(--color-card);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .card h2 {
+      color: var(--color-primary);
+      margin-top: 0;
+      font-size: 1.35rem;
+    }
+    .card h3 {
+      color: var(--color-text);
+      margin-top: 24px;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+    .card p, .card li { color: #374151; }
+    .card ul { padding-left: 20px; }
+    .card li { margin-bottom: 8px; }
+    .highlight {
+      background: #E8F5EC;
+      border-left: 4px solid var(--color-primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .warning {
+      background: #FFF3E0;
+      border-left: 4px solid var(--color-accent);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #E5E7EB;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--color-primary);
+    }
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: var(--color-primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+    }
+    .btn:hover {
+      background: #24703E;
+    }
+    .btn-whatsapp {
+      background: #25D366;
+    }
+    .btn-whatsapp:hover {
+      background: #20BA5A;
+    }
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      color: var(--color-muted);
+      font-size: 0.875rem;
+    }
+    footer a { color: var(--color-primary); }
+    a { color: var(--color-primary); }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Volver a documentos legales</a>
+    <h1>Solicitud de Eliminación de Datos</h1>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Solicitar eliminación de cuenta y datos</h2>
+      <p>De acuerdo con la Ley 25.326 de Protección de los Datos Personales, tenés derecho a solicitar la eliminación de tu cuenta y todos los datos asociados.</p>
+
+      <div class="warning">
+        <p><strong>⚠️ Importante:</strong> Esta acción es irreversible. Una vez eliminados, no podrás recuperar tus datos, inventario, clientes, fiados ni historial de transacciones.</p>
+      </div>
+
+      <h3>Datos que se eliminarán:</h3>
+      <ul>
+        <li>Información de tu cuenta (nombre, correo electrónico)</li>
+        <li>Datos del negocio (productos, precios, stock)</li>
+        <li>Clientes y contactos registrados</li>
+        <li>Fiados y deudas</li>
+        <li>Historial de transacciones de caja</li>
+        <li>Configuraciones y preferencias</li>
+      </ul>
+
+      <h3>Datos que pueden conservarse:</h3>
+      <ul>
+        <li>Registros de seguridad necesarios para prevenir fraudes</li>
+        <li>Datos requeridos por obligación legal</li>
+      </ul>
+
+      <form id="deletionForm">
+        <div class="form-group">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+        </div>
+
+        <div class="form-group">
+          <label for="correo">Correo electrónico de la cuenta *</label>
+          <input type="email" id="correo" name="correo" required placeholder="correo@ejemplo.com">
+        </div>
+
+        <div class="form-group">
+          <label for="comercio">Nombre del comercio (opcional)</label>
+          <input type="text" id="comercio" name="comercio" placeholder="Nombre de tu kiosquito/negocio">
+        </div>
+
+        <div class="form-group">
+          <label for="motivo">Motivo de la solicitud *</label>
+          <select id="motivo" name="motivo" required>
+            <option value="">Selecciona un motivo</option>
+            <option value="Ya no uso la aplicación">Ya no uso la aplicación</option>
+            <option value="No estoy conforme con el servicio">No estoy conforme con el servicio</option>
+            <option value="Preocupación por privacidad de datos">Preocupación por privacidad de datos</option>
+            <option value="Cambio a otra aplicación">Cambio a otra aplicación</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="detalles">Detalles adicionales (opcional)</label>
+          <textarea id="detalles" name="detalles" placeholder="Podés agregar más detalles sobre tu solicitud..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-whatsapp">
+          📱 Enviar solicitud por WhatsApp
+        </button>
+      </form>
+
+      <div class="highlight">
+        <p><strong>Alternativa:</strong> Si preferís no usar WhatsApp, también podés enviar tu solicitud por correo electrónico a <a href="mailto:facucercuetti420@gmail.com">facucercuetti420@gmail.com</a> con el asunto "Solicitud de eliminación de cuenta - Mi Kiosquito".</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Mi Kiosquito — Facundo M. Cercuetti — Salta, Argentina</p>
+    <p><a href="index.html">Volver a documentos legales</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('deletionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const nombre = document.getElementById('nombre').value.trim();
+      const correo = document.getElementById('correo').value.trim();
+      const comercio = document.getElementById('comercio').value.trim();
+      const motivo = document.getElementById('motivo').value;
+      const detalles = document.getElementById('detalles').value.trim();
+      
+      if (!nombre || !correo || !motivo) {
+        alert('Por favor completá los campos obligatorios.');
+        return;
+      }
+      
+      const mensaje = `🗑️ *SOLICITUD DE ELIMINACIÓN DE CUENTA - MI KIOSQUITO*
+
+*Nombre:* ${nombre}
+*Correo:* ${correo}
+${comercio ? `*Comercio:* ${comercio}` : ''}
+*Motivo:* ${motivo}
+${detalles ? `*Detalles:* ${detalles}` : ''}
+
+---
+Solicitud enviada desde el formulario de eliminación de datos.
+Procesaré esta solicitud dentro de los plazos legales establecidos.`;
+      
+      const mensajeCodificado = encodeURIComponent(mensaje);
+      const whatsappUrl = `https://wa.me/5493875828874?text=${mensajeCodificado}`;
+      
+      window.open(whatsappUrl, '_blank');
+    });
+  </script>
+</body>
+</html>
