@@ -191,6 +191,11 @@
       display: block;
       border-radius: 12px 12px 0 0;
     }
+    .screenshot-caption {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
     .download-section {
       background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
       border-radius: 20px;
@@ -367,6 +372,85 @@
       gap: 15px;
       margin: 30px 0;
     }
+    .hero-banner {
+      padding-top: 60px;
+    }
+    .hero-banner .app-image {
+      margin-top: 20px;
+    }
+    .early-access-box {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 24px 0 32px;
+      position: relative;
+    }
+    .early-access-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 16px;
+      opacity: 1;
+    }
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal {
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.35);
+      text-align: center;
+      color: var(--color-text);
+    }
+    .modal h3 {
+      margin: 0 0 12px;
+      color: var(--color-primary);
+      font-size: 1.4rem;
+    }
+    .modal p {
+      margin: 0 0 20px;
+      color: var(--color-muted);
+      font-size: 0.95rem;
+    }
+    .modal input[type="email"] {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #E5E7EB;
+      border-radius: 12px;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .modal input[type="email"]:focus {
+      border-color: var(--color-primary);
+    }
+    .modal .modal-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .modal .message {
+      margin-top: 14px;
+      font-size: 0.9rem;
+      min-height: 1.3em;
+    }
+    .modal .message.success { color: var(--color-primary); }
+    .modal .message.error { color: var(--color-danger); }
     @media (max-width: 640px) {
       header h1 { font-size: 2rem; }
       .hero h2 { font-size: 1.5rem; }
@@ -378,16 +462,8 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Mi Kiosquito</h1>
-    <p>Gestiona de forma inteligente tu pequeño negocio</p>
-    <div class="tagline">✅ La app que todos los kioscos necesitan</div>
-  </header>
-
   <main>
-    <div class="hero">
-      <h2>La herramienta definitiva para pequeños comercios</h2>
-      <p>Gestiona todo tu negocio en una sola aplicación: inventario, caja, clientes, fiados y reportes de forma rápida y sencilla.</p>
+    <div class="hero hero-banner">
       <div class="badge-row">
         <span class="badge">Android App</span>
         <span class="badge">100% Gratis</span>
@@ -400,7 +476,12 @@
     <div class="download-section">
       <h2>¡Consigue Mi Kiosquito Ahora!</h2>
       <p>Descarga la aplicación en tu dispositivo Android y comienza a gestionar tu negocio de inmediato.</p>
-      
+
+      <div class="early-access-box">
+        <p class="early-access-text">🚀 Solicita Acceso anticipado GRATUITO al app en playstore</p>
+        <button type="button" id="btn-solicitar" class="btn btn-accent">Solicitar acceso anticipado</button>
+      </div>
+
       <div class="cta-buttons">
         <a href="https://play.google.com/store/apps/details?id=com.nickdev24.mikiosquito" target="_blank" rel="noopener noreferrer" class="btn btn-accent">
           📱 Descargar de Play Store
@@ -460,39 +541,39 @@
     <div class="screenshots">
       <h2>Interfaz de la Aplicación</h2>
       <p>Consulta las capturas de pantalla de la aplicación para ver su funcionamiento.</p>
-      
+
       <div class="screenshot-gallery">
         <div class="screenshot">
           <img src="https://raw.githubusercontent.com/NickDev24/mi-kiosquito-legales/main/img/screenshoot%20app/perfil.jpeg" alt="Pantalla Perfil">
-          <p style="margin-top: 8px; font-size: 0.85rem; font-weight: 600;">Perfil</p>
+          <p class="screenshot-caption">Perfil</p>
         </div>
         <div class="screenshot">
           <img src="https://raw.githubusercontent.com/NickDev24/mi-kiosquito-legales/main/img/screenshoot%20app/dashboard.jpeg" alt="Pantalla Dashboard">
-          <p style="margin-top: 8px; font-size: 0.85rem; font-weight: 600;">Dashboard</p>
+          <p class="screenshot-caption">Dashboard</p>
         </div>
         <div class="screenshot">
           <img src="https://raw.githubusercontent.com/NickDev24/mi-kiosquito-legales/main/img/screenshoot%20app/login.jpeg" alt="Pantalla Login">
-          <p style="margin-top: 8px; font-size: 0.85rem; font-weight: 600;">Login</p>
+          <p class="screenshot-caption">Login</p>
         </div>
         <div class="screenshot">
           <img src="https://raw.githubusercontent.com/NickDev24/mi-kiosquito-legales/main/img/screenshoot%20app/nueva_venta.jpeg" alt="Pantalla Nueva Venta">
-          <p style="margin-top: 8px; font-size: 0.85rem; font-weight: 600;">Nueva Venta</p>
+          <p class="screenshot-caption">Nueva Venta</p>
         </div>
         <div class="screenshot">
           <img src="https://raw.githubusercontent.com/NickDev24/mi-kiosquito-legales/main/img/screenshoot%20app/producto_agregado.jpeg" alt="Pantalla Producto Agregado">
-          <p style="margin-top: 8px; font-size: 0.85rem; font-weight: 600;">Producto Agregado</p>
+          <p class="screenshot-caption">Producto Agregado</p>
         </div>
         <div class="screenshot">
           <img src="https://raw.githubusercontent.com/NickDev24/mi-kiosquito-legales/main/img/screenshoot%20app/registro.jpeg" alt="Pantalla Registro">
-          <p style="margin-top: 8px; font-size: 0.85rem; font-weight: 600;">Registro</p>
+          <p class="screenshot-caption">Registro</p>
         </div>
         <div class="screenshot">
           <img src="https://raw.githubusercontent.com/NickDev24/mi-kiosquito-legales/main/img/screenshoot%20app/nuevo_producto.jpeg" alt="Pantalla Nuevo Producto">
-          <p style="margin-top: 8px; font-size: 0.85rem; font-weight: 600;">Nuevo Producto</p>
+          <p class="screenshot-caption">Nuevo Producto</p>
         </div>
         <div class="screenshot">
           <img src="https://raw.githubusercontent.com/NickDev24/mi-kiosquito-legales/main/img/screenshoot%20app/clientes.jpeg" alt="Pantalla Clientes">
-          <p style="margin-top: 8px; font-size: 0.85rem; font-weight: 600;">Clientes</p>
+          <p class="screenshot-caption">Clientes</p>
         </div>
       </div>
     </div>
@@ -531,5 +612,78 @@
     <p>La aplicación móvil definitiva para la gestión de pequeños comercios</p>
     <p><a href="https://github.com/NickDev24" target="_blank" rel="noopener noreferrer">GitHub: NickDev24</a></p>
   </footer>
+
+  <div class="modal-overlay" id="modal-acceso" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <h3 id="modal-title">Solicitar acceso anticipado</h3>
+      <p>Ingresá tu correo electrónico. Te avisaremos cuando tu acceso anticipado esté listo.</p>
+      <input type="email" id="email-acceso" placeholder="tu@email.com" required>
+      <div class="modal-actions">
+        <button type="button" id="btn-cancelar" class="btn">Cancelar</button>
+        <button type="button" id="btn-continuar" class="btn btn-accent">Continuar</button>
+      </div>
+      <p class="message" id="modal-mensaje" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const WHATSAPP_DESTINO = '+5493875798949';
+
+      const modal = document.getElementById('modal-acceso');
+      const btnSolicitar = document.getElementById('btn-solicitar');
+      const btnCancelar = document.getElementById('btn-cancelar');
+      const btnContinuar = document.getElementById('btn-continuar');
+      const inputEmail = document.getElementById('email-acceso');
+      const mensaje = document.getElementById('modal-mensaje');
+
+      function abrirModal() {
+        modal.classList.add('active');
+        inputEmail.value = '';
+        mensaje.textContent = '';
+        mensaje.className = 'message';
+        inputEmail.focus();
+      }
+
+      function cerrarModal() {
+        modal.classList.remove('active');
+      }
+
+      function esEmailValido(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function enviarPorWhatsApp(email) {
+        const texto = 'Hola, solicito acceso anticipado GRATUITO a Mi Kiosquito. Mi correo es: ' + encodeURIComponent(email);
+        const url = 'https://wa.me/' + WHATSAPP_DESTINO.replace(/\D/g, '') + '?text=' + texto;
+        window.open(url, '_blank', 'noopener,noreferrer');
+      }
+
+      function continuar() {
+        const email = inputEmail.value.trim();
+        if (!email || !esEmailValido(email)) {
+          mensaje.textContent = 'Por favor ingresá un correo electrónico válido.';
+          mensaje.className = 'message error';
+          inputEmail.focus();
+          return;
+        }
+
+        mensaje.textContent = 'Abriendo WhatsApp...';
+        mensaje.className = 'message success';
+        enviarPorWhatsApp(email);
+        setTimeout(cerrarModal, 1200);
+      }
+
+      btnSolicitar.addEventListener('click', abrirModal);
+      btnCancelar.addEventListener('click', cerrarModal);
+      btnContinuar.addEventListener('click', continuar);
+      inputEmail.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') continuar();
+      });
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) cerrarModal();
+      });
+    })();
+  </script>
 </body>
 </html>

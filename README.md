@@ -70,9 +70,29 @@ Los documentos contenidos en este repositorio tienen carácter informativo y no 
 
 Este repositorio de documentación es de código abierto y está disponible bajo la licencia MIT. Los documentos legales pueden ser utilizados como referencia para otros proyectos similares.
 
+## 📱 Acceso anticipado en Play Store
+
+La página principal incluye un formulario para solicitar acceso anticipado gratuito. Al completar el correo electrónico, se abre WhatsApp (web o app) con un mensaje prellenado dirigido al número configurado. El usuario solo debe tocar "Enviar" en WhatsApp para completar la solicitud.
+
+> **Nota técnica:** `whatsapp-web.js` es una librería de Node.js que requiere un servidor backend y no puede ejecutarse directamente en HTML/GitHub Pages. Para mantener el sitio 100% estático y compatible con GitHub Pages, se utiliza el esquema oficial `https://wa.me/` de WhatsApp.
+
+## 📢 app-ads.txt
+
+El archivo `app-ads.txt` está publicado en la raíz del dominio para que AdMob lo rastree y valide:
+
+```
+https://nickdev24.github.io/mi-kiosquito-legales/app-ads.txt
+```
+
+Contenido:
+
+```text
+google.com, pub-6126667740222639, DIRECT, f08c47fec0942fa0
+```
+
 ## 🤝 Contribuciones
 
-Este repositorio es exclusivamente para documentos legales. Si encontrás errores o mejoras en la redacción, podés abrir un issue o enviar un pull request.
+Si encontrás errores o mejoras, podés abrir un issue o enviar un pull request.
 
 ---
 
