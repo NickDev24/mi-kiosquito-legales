@@ -16,427 +16,468 @@
   <meta name="twitter:image" content="https://raw.githubusercontent.com/NickDev24/mi-kiosquito-legales/main/img/banner_1024x500.jpeg">
   <style>
     :root {
-      --color-primary: #2D8A4E;
-      --color-accent: #F27D28;
-      --color-secondary: #10B981;
-      --color-danger: #EF4444;
-      --color-text: #1A1A1A;
-      --color-muted: #6B7280;
-      --color-bg: #F8F7F4;
-      --color-card: #FFFFFF;
-      --color-dark: #111827;
+      --color-primary: #237a42;
+      --color-primary-dark: #1a5c32;
+      --color-accent: #E86A1F;
+      --color-secondary: #0ea371;
+      --color-danger: #DC2626;
+      --color-text: #1f2937;
+      --color-muted: #4b5563;
+      --color-bg: #eef5f0;
+      --color-card: #ffffff;
+      --color-dark: #0f172a;
+      --color-cream: #f6f8f4;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: linear-gradient(135deg, #F8F7F4 0%, #F0FDF4 100%);
+      background: var(--color-bg);
       color: var(--color-text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
-    header {
-      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    .navbar {
+      background: linear-gradient(90deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
       color: white;
-      padding: 60px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    header::before {
-      content: '';
-      position: absolute;
+      padding: 16px 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M20 0L0 20L20 40L40 20L20 0ZM20 3.5L37.5 20L20 36.5L2.5 20L20 3.5Z" fill="white" fill-opacity="0.1"/></svg>') repeat;
-      pointer-events: none;
+      z-index: 100;
     }
-    header h1 {
-      margin: 0 0 12px;
-      font-size: 2.5rem;
-      font-weight: 700;
-      position: relative;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    .navbar-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
-    header p {
-      margin: 0;
-      opacity: 0.95;
+    .navbar-brand {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .navbar-brand span {
+      background: rgba(255,255,255,0.18);
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
       font-size: 1.1rem;
-      position: relative;
     }
-    .tagline {
-      background: rgba(255,255,255,0.2);
-      display: inline-block;
-      padding: 6px 16px;
-      border-radius: 30px;
-      margin-top: 16px;
+    .navbar-links {
+      display: flex;
+      gap: 18px;
       font-size: 0.9rem;
       font-weight: 600;
-      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .navbar-links a {
+      color: rgba(255,255,255,0.92);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .navbar-links a:hover { color: white; }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+    }
+    .hero {
+      text-align: center;
+      padding: 50px 28px 45px;
+      background: linear-gradient(180deg, var(--color-card) 0%, var(--color-cream) 100%);
+      border-radius: 0 0 28px 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      margin-bottom: 40px;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      color: var(--color-primary-dark);
+      margin: 0 0 14px;
+      line-height: 1.15;
+    }
+    .hero h1 strong {
+      color: var(--color-accent);
+    }
+    .hero .lead {
+      font-size: 1.15rem;
+      color: var(--color-muted);
+      max-width: 520px;
+      margin: 0 auto 26px;
     }
     .app-image {
       width: 100%;
-      max-width: 600px;
-      margin: 30px auto;
+      max-width: 620px;
+      margin: 28px auto 0;
       display: block;
-      border-radius: 16px;
-      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+      border-radius: 18px;
+      box-shadow: 0 28px 60px -14px rgba(0,0,0,0.28);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .app-image:hover {
       transform: translateY(-5px);
-      box-shadow: 0 35px 60px -12px rgba(0,0,0,0.35);
-    }
-    main {
-      max-width: 720px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .hero {
-      text-align: center;
-      padding: 40px 0;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      color: var(--color-primary);
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      color: var(--color-muted);
-      max-width: 500px;
-      margin: 0 auto 30px;
+      box-shadow: 0 36px 70px -12px rgba(0,0,0,0.35);
     }
     .badge {
       display: inline-block;
-      padding: 6px 12px;
+      padding: 7px 14px;
       background: var(--color-accent);
       color: white;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 600;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
       margin: 4px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .badge-outline {
+      background: transparent;
+      color: var(--color-primary);
+      border: 2px solid var(--color-primary);
+    }
+    .section {
+      margin: 44px 0;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 1.7rem;
+      color: var(--color-primary-dark);
+      margin-bottom: 10px;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--color-muted);
+      max-width: 520px;
+      margin: 0 auto 28px;
+      font-size: 1rem;
     }
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      margin: 40px 0;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 18px;
+      margin: 32px 0;
     }
     .feature {
       background: var(--color-card);
-      border-radius: 14px;
-      padding: 20px;
+      border-radius: 18px;
+      padding: 24px 18px;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+      transition: transform 0.25s, box-shadow 0.25s;
+      border: 1px solid rgba(0,0,0,0.04);
     }
     .feature:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 14px 24px rgba(0,0,0,0.1);
     }
     .feature-icon {
-      width: 48px;
-      height: 48px;
-      margin: 0 auto 12px;
-      background: #E8F5EC;
-      border-radius: 50%;
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 14px;
+      background: linear-gradient(135deg, #e8f5ec 0%, #d1ebd9 100%);
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 26px;
     }
     .feature h3 {
-      font-size: 1rem;
+      font-size: 1.05rem;
       margin: 0 0 8px;
-      color: var(--color-primary);
+      color: var(--color-primary-dark);
     }
     .feature p {
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       color: var(--color-muted);
       margin: 0;
     }
     .screenshots {
-      margin: 50px 0;
+      margin: 54px 0;
       text-align: center;
-    }
-    .screenshots h2 {
-      color: var(--color-primary);
-      margin-bottom: 30px;
-      font-size: 1.8rem;
     }
     .screenshot-gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin: 20px 0;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+      margin: 24px 0;
     }
     .screenshot {
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.08);
       transition: transform 0.3s, box-shadow 0.3s;
-      background: white;
-      padding-bottom: 8px;
+      background: var(--color-card);
+      padding-bottom: 10px;
+      border: 1px solid rgba(0,0,0,0.04);
     }
     .screenshot:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 32px rgba(0,0,0,0.14);
     }
     .screenshot img {
       width: 100%;
       height: auto;
       display: block;
-      border-radius: 12px 12px 0 0;
     }
     .screenshot-caption {
-      margin-top: 8px;
-      font-size: 0.85rem;
-      font-weight: 600;
+      margin-top: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
     }
     .download-section {
       background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-      border-radius: 20px;
-      padding: 40px 20px;
+      border-radius: 24px;
+      padding: 46px 28px;
       text-align: center;
       color: white;
-      margin: 50px 0;
-      box-shadow: 0 20px 40px rgba(45, 138, 78, 0.3);
+      margin: 48px 0;
+      box-shadow: 0 22px 46px rgba(35, 122, 66, 0.32);
       position: relative;
       overflow: hidden;
     }
     .download-section::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="white" fill-opacity="0.05"/><circle cx="30" cy="30" r="20" fill="white" fill-opacity="0.05"/></svg>') repeat;
+      top: -50%;
+      left: -50%;
+      right: -50%;
+      bottom: -50%;
+      background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.12) 0%, transparent 25%),
+                  radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 25%);
       pointer-events: none;
     }
     .download-section h2 {
       margin-top: 0;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       position: relative;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
-    .download-section p {
-      font-size: 1.1rem;
-      margin-bottom: 30px;
+    .download-section .subtitle {
+      font-size: 1.05rem;
+      margin-bottom: 28px;
       position: relative;
       opacity: 0.95;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .btn {
       display: inline-block;
-      padding: 16px 32px;
+      padding: 15px 28px;
       background: white;
-      color: var(--color-primary);
+      color: var(--color-primary-dark);
       text-decoration: none;
       border-radius: 12px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      margin: 0 8px;
+      font-weight: 800;
+      font-size: 1rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+      border: none;
+      cursor: pointer;
     }
     .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+      background: #f8fafc;
     }
     .btn-accent {
       background: var(--color-accent);
       color: white;
-      border: 2px solid rgba(255,255,255,0.3);
     }
     .btn-accent:hover {
-      background: rgba(255,255,255,0.1);
+      background: #d45d16;
+    }
+    .btn-ghost {
+      background: rgba(255,255,255,0.12);
       color: white;
-      border-color: white;
+      border: 2px solid rgba(255,255,255,0.35);
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.22);
     }
     .badge-row {
-      margin: 20px 0 30px;
+      margin: 22px 0 28px;
       position: relative;
     }
     .play-badge {
-      height: 48px;
+      height: 52px;
       margin: 0 8px;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      filter: drop-shadow(0 3px 5px rgba(0,0,0,0.25));
     }
     .card {
       background: var(--color-card);
-      border-radius: 14px;
-      padding: 24px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      position: relative;
-    }
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-      border-radius: 14px 14px 0 0;
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 22px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.04);
     }
     .card h2 {
       margin-top: 0;
-      color: var(--color-primary);
-      font-size: 1.4rem;
+      color: var(--color-primary-dark);
+      font-size: 1.35rem;
+      margin-bottom: 14px;
     }
     .card p {
-      margin: 12px 0;
+      margin: 10px 0;
       color: var(--color-muted);
     }
     .links {
       list-style: none;
       padding: 0;
-      margin: 20px 0 0;
-      display: flex;
-      flex-wrap: wrap;
+      margin: 18px 0 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 12px;
-    }
-    .links li {
-      margin-bottom: 12px;
     }
     .links a {
       display: block;
-      padding: 16px 24px;
-      background: linear-gradient(135deg, #E8F5EC 0%, #D1EBD9 100%);
-      color: var(--color-primary);
+      padding: 16px 20px;
+      background: linear-gradient(135deg, #eef7f0 0%, #e2f1e7 100%);
+      color: var(--color-primary-dark);
       text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
+      border-radius: 12px;
+      font-weight: 700;
       transition: all 0.2s;
       border-left: 4px solid var(--color-primary);
     }
     .links a:hover {
-      background: linear-gradient(135deg, #D1EBD9 0%, #B8E0C1 100%);
-      transform: translateX(3px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: linear-gradient(135deg, #e2f1e7 0%, #d4ebdb 100%);
+      transform: translateX(4px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
     .legal-notice {
-      background: #FEF3C7;
-      border-left: 4px solid #F59E0B;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 30px 0;
-      color: #92400E;
+      background: #fff7ed;
+      border-left: 5px solid #f59e0b;
+      padding: 22px;
+      border-radius: 12px;
+      margin: 32px 0;
+      color: #92400e;
     }
     .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 20px;
-      margin: 40px 0;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 18px;
+      margin: 36px 0;
+      background: var(--color-card);
+      padding: 28px;
+      border-radius: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.04);
     }
     .stat {
       text-align: center;
-      padding: 20px;
+      padding: 12px;
     }
     .stat-number {
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: 2.1rem;
+      font-weight: 800;
       color: var(--color-primary);
     }
     .stat-label {
       font-size: 0.85rem;
       color: var(--color-muted);
+      font-weight: 600;
     }
     footer {
       background: var(--color-dark);
-      color: white;
+      color: #e2e8f0;
       text-align: center;
-      padding: 40px 20px;
+      padding: 46px 24px;
       margin-top: 60px;
     }
-    footer a { 
-      color: var(--color-secondary); 
-    }
+    footer p { margin: 8px 0; }
+    footer a { color: #6ee7b7; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
     .version-info {
-      background: #F3F4F6;
-      border-radius: 8px;
-      padding: 12px 20px;
-      margin: 20px 0;
+      background: var(--color-card);
+      border-radius: 12px;
+      padding: 18px 24px;
+      margin: 32px 0;
       font-size: 0.9rem;
       color: var(--color-muted);
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+      border: 1px solid rgba(0,0,0,0.04);
     }
     .cta-buttons {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 15px;
-      margin: 30px 0;
-    }
-    .hero-banner {
-      padding-top: 60px;
-    }
-    .hero-banner .app-image {
-      margin-top: 20px;
-    }
-    .early-access-box {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 16px;
-      padding: 24px;
-      margin: 24px 0 32px;
+      gap: 14px;
+      margin: 26px 0;
       position: relative;
     }
+    .early-access-box {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 18px;
+      padding: 26px 22px;
+      margin: 26px 0 34px;
+      position: relative;
+      backdrop-filter: blur(4px);
+    }
     .early-access-text {
-      font-size: 1.15rem;
-      font-weight: 700;
+      font-size: 1.2rem;
+      font-weight: 800;
       margin: 0 0 16px;
       opacity: 1;
     }
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.6);
+      background: rgba(15, 23, 42, 0.65);
       display: none;
       align-items: center;
       justify-content: center;
       z-index: 1000;
       padding: 20px;
     }
-    .modal-overlay.active {
-      display: flex;
-    }
+    .modal-overlay.active { display: flex; }
     .modal {
-      background: white;
-      border-radius: 20px;
-      padding: 28px;
+      background: var(--color-card);
+      border-radius: 22px;
+      padding: 32px;
       max-width: 420px;
       width: 100%;
-      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.35);
+      box-shadow: 0 30px 60px -12px rgba(0,0,0,0.4);
       text-align: center;
       color: var(--color-text);
+      border: 1px solid rgba(0,0,0,0.06);
     }
     .modal h3 {
       margin: 0 0 12px;
-      color: var(--color-primary);
-      font-size: 1.4rem;
+      color: var(--color-primary-dark);
+      font-size: 1.45rem;
     }
     .modal p {
-      margin: 0 0 20px;
+      margin: 0 0 22px;
       color: var(--color-muted);
-      font-size: 0.95rem;
+      font-size: 0.98rem;
     }
     .modal input[type="email"] {
       width: 100%;
-      padding: 14px 16px;
-      border: 2px solid #E5E7EB;
+      padding: 15px 18px;
+      border: 2px solid #e5e7eb;
       border-radius: 12px;
       font-size: 1rem;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: #f8fafc;
     }
     .modal input[type="email"]:focus {
       border-color: var(--color-primary);
+      box-shadow: 0 0 0 4px rgba(35, 122, 66, 0.12);
     }
     .modal .modal-actions {
       display: flex;
@@ -445,58 +486,54 @@
       flex-wrap: wrap;
     }
     .modal .message {
-      margin-top: 14px;
-      font-size: 0.9rem;
-      min-height: 1.3em;
+      margin-top: 16px;
+      font-size: 0.92rem;
+      min-height: 1.4em;
     }
     .modal .message.success { color: var(--color-primary); }
     .modal .message.error { color: var(--color-danger); }
     @media (max-width: 640px) {
-      header h1 { font-size: 2rem; }
-      .hero h2 { font-size: 1.5rem; }
-      .features { grid-template-columns: 1fr; }
-      .screenshot-gallery { grid-template-columns: 1fr; }
-      .btn { width: 100%; margin: 8px 0; }
-      .download-section h2 { font-size: 1.5rem; }
+      .navbar-inner { flex-wrap: wrap; justify-content: center; }
+      .navbar-links { font-size: 0.85rem; gap: 14px; }
+      .hero { padding: 36px 20px 32px; border-radius: 0 0 22px 22px; }
+      .hero h1 { font-size: 1.9rem; }
+      .section-title { font-size: 1.45rem; }
+      .features, .screenshot-gallery { grid-template-columns: 1fr; }
+      .links { grid-template-columns: 1fr; }
+      .btn { width: 100%; margin: 6px 0; }
+      .download-section h2 { font-size: 1.55rem; }
+      .cta-buttons { flex-direction: column; align-items: stretch; }
     }
   </style>
 </head>
 <body>
+  <nav class="navbar" aria-label="Navegación principal">
+    <div class="navbar-inner">
+      <a class="navbar-brand" href="#" aria-label="Mi Kiosquito">
+        <span>🛒</span> Mi Kiosquito
+      </a>
+      <div class="navbar-links">
+        <a href="#descargar">Descargar</a>
+        <a href="#funciones">Funciones</a>
+        <a href="#legal">Legal</a>
+      </div>
+    </div>
+  </nav>
+
   <main>
-    <div class="hero hero-banner">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Gestiona tu kiosco con <strong>Mi Kiosquito</strong></h1>
+      <p class="lead">La app Android para pequeños comercios: inventario, caja, clientes, fiados y reportes en un solo lugar.</p>
       <div class="badge-row">
         <span class="badge">Android App</span>
-        <span class="badge">100% Gratis</span>
-        <span class="badge">Sin Publicidad (Premium)</span>
-        <span class="badge">Funciona Offline</span>
+        <span class="badge badge-outline">100% Gratis</span>
+        <span class="badge badge-outline">Sin Publicidad Premium</span>
+        <span class="badge badge-outline">Funciona Offline</span>
       </div>
       <img src="https://raw.githubusercontent.com/NickDev24/mi-kiosquito-legales/main/img/banner_1024x500.jpeg" alt="Mi Kiosquito - Aplicación Móvil" class="app-image">
-    </div>
+    </section>
 
-    <div class="download-section">
-      <h2>¡Consigue Mi Kiosquito Ahora!</h2>
-      <p>Descarga la aplicación en tu dispositivo Android y comienza a gestionar tu negocio de inmediato.</p>
-
-      <div class="early-access-box">
-        <p class="early-access-text">🚀 Solicita Acceso anticipado GRATUITO al app en playstore</p>
-        <button type="button" id="btn-solicitar" class="btn btn-accent">Solicitar acceso anticipado</button>
-      </div>
-
-      <div class="cta-buttons">
-        <a href="https://play.google.com/store/apps/details?id=com.nickdev24.mikiosquito" target="_blank" rel="noopener noreferrer" class="btn btn-accent">
-          📱 Descargar de Play Store
-        </a>
-        <a href="https://github.com/NickDev24/mi-kiosquito/issues" target="_blank" rel="noopener noreferrer" class="btn">
-          💬 Reportar un Problema
-        </a>
-      </div>
-
-      <div class="badge-row">
-        <img src="https://play.google.com/about/images/badges/google_play_badge.svg" alt="Disponible en Google Play" class="play-badge">
-      </div>
-    </div>
-
-    <div class="stats">
+    <section class="stats" aria-label="Estadísticas">
       <div class="stat">
         <div class="stat-number">4</div>
         <div class="stat-label">Funciones Principales</div>
@@ -513,34 +550,61 @@
         <div class="stat-number">100%</div>
         <div class="stat-label">Limpio y Seguro</div>
       </div>
-    </div>
+    </section>
 
-    <div class="features">
-      <div class="feature">
-        <div class="feature-icon">📦</div>
-        <h3>Inventario</h3>
-        <p>Control de productos, stock y códigos de barras</p>
+    <section id="funciones" class="section" aria-labelledby="funciones-title">
+      <h2 id="funciones-title" class="section-title">Todo lo que necesitás</h2>
+      <p class="section-subtitle">Herramientas simples y poderosas para llevar tu negocio al día.</p>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">📦</div>
+          <h3>Inventario</h3>
+          <p>Control de productos, stock y códigos de barras</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">💰</div>
+          <h3>Caja Diaria</h3>
+          <p>Registro de ventas, gastos y balance diario</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">👥</div>
+          <h3>Clientes</h3>
+          <p>Base de datos de clientes y su historial</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🏦</div>
+          <h3>Fiados</h3>
+          <p>Control de cuentas por cobrar y deudas</p>
+        </div>
       </div>
-      <div class="feature">
-        <div class="feature-icon">💰</div>
-        <h3>Caja Diaria</h3>
-        <p>Registro de ventas, gastos y balance diario</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">👥</div>
-        <h3>Clientes</h3>
-        <p>Base de datos de clientes y su historial</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">🏦</div>
-        <h3>Fiados</h3>
-        <p>Control de cuentas por cobrar y deudas</p>
-      </div>
-    </div>
+    </section>
 
-    <div class="screenshots">
-      <h2>Interfaz de la Aplicación</h2>
-      <p>Consulta las capturas de pantalla de la aplicación para ver su funcionamiento.</p>
+    <section id="descargar" class="download-section" aria-labelledby="descargar-title">
+      <h2 id="descargar-title">¡Consigue Mi Kiosquito Ahora!</h2>
+      <p class="subtitle">Descargá la aplicación en tu dispositivo Android y comenzá a gestionar tu negocio de inmediato.</p>
+
+      <div class="early-access-box">
+        <p class="early-access-text">🚀 Solicita Acceso anticipado GRATUITO al app en playstore</p>
+        <button type="button" id="btn-solicitar" class="btn btn-accent">Solicitar acceso anticipado</button>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="https://play.google.com/store/apps/details?id=com.nickdev24.mikiosquito" target="_blank" rel="noopener noreferrer" class="btn">
+          📱 Descargar de Play Store
+        </a>
+        <a href="https://github.com/NickDev24/mi-kiosquito/issues" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+          💬 Reportar un Problema
+        </a>
+      </div>
+
+      <div class="badge-row">
+        <img src="https://play.google.com/about/images/badges/google_play_badge.svg" alt="Disponible en Google Play" class="play-badge">
+      </div>
+    </section>
+
+    <section class="screenshots" aria-labelledby="screenshots-title">
+      <h2 id="screenshots-title" class="section-title">Interfaz de la Aplicación</h2>
+      <p class="section-subtitle">Consultá las capturas de pantalla para ver Mi Kiosquito en acción.</p>
 
       <div class="screenshot-gallery">
         <div class="screenshot">
@@ -576,35 +640,37 @@
           <p class="screenshot-caption">Clientes</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <h2>Documentos disponibles</h2>
-      <p>A continuación encontrarás los documentos legales aplicables al uso de la aplicación móvil Mi Kiosquito.</p>
-      <ul class="links">
-        <li><a href="politica-de-privacidad.html">Política de Privacidad</a></li>
-        <li><a href="terminos-y-condiciones.html">Términos y Condiciones de Uso</a></li>
-        <li><a href="politicas-de-pago.html">Políticas de Pago y Suscripción</a></li>
-        <li><a href="solicitud-eliminacion.html">Solicitud de Eliminación de Datos</a></li>
-      </ul>
-    </div>
+    <section id="legal" class="section" aria-labelledby="legal-title">
+      <div class="card">
+        <h2 id="legal-title">Documentos disponibles</h2>
+        <p>A continuación encontrarás los documentos legales aplicables al uso de la aplicación móvil Mi Kiosquito.</p>
+        <ul class="links">
+          <li><a href="politica-de-privacidad.html">Política de Privacidad</a></li>
+          <li><a href="terminos-y-condiciones.html">Términos y Condiciones de Uso</a></li>
+          <li><a href="politicas-de-pago.html">Políticas de Pago y Suscripción</a></li>
+          <li><a href="solicitud-eliminacion.html">Solicitud de Eliminación de Datos</a></li>
+        </ul>
+      </div>
 
-    <div class="card">
-      <h2>Información del desarrollador</h2>
-      <p><strong>Responsable:</strong> Facundo M. Cercuetti</p>
-      <p><strong>Ubicación:</strong> Salta Capital, Argentina</p>
-      <p><strong>Contacto:</strong> <a href="mailto:facucercuetti420@gmail.com">facucercuetti420@gmail.com</a></p>
-      <p><strong>Repositorio:</strong> <a href="https://github.com/NickDev24/mi-kiosquito-legales" target="_blank" rel="noopener noreferrer">github.com/NickDev24/mi-kiosquito-legales</a></p>
-    </div>
+      <div class="card">
+        <h2>Información del desarrollador</h2>
+        <p><strong>Responsable:</strong> Facundo M. Cercuetti</p>
+        <p><strong>Ubicación:</strong> Salta Capital, Argentina</p>
+        <p><strong>Contacto:</strong> <a href="mailto:facucercuetti420@gmail.com">facucercuetti420@gmail.com</a></p>
+        <p><strong>Repositorio:</strong> <a href="https://github.com/NickDev24/mi-kiosquito-legales" target="_blank" rel="noopener noreferrer">github.com/NickDev24/mi-kiosquito-legales</a></p>
+      </div>
 
-    <div class="legal-notice">
-      <p><strong>📋 Aviso importante:</strong> Estos documentos están redactados conforme a la legislación de la República Argentina, incluyendo la Ley 25.326 de Protección de los Datos Personales y el Código Civil y Comercial de la Nación. Si tenés dudas específicas sobre tu situación particular, te recomendamos consultar con un abogado.</p>
-    </div>
+      <div class="legal-notice">
+        <p><strong>📋 Aviso importante:</strong> Estos documentos están redactados conforme a la legislación de la República Argentina, incluyendo la Ley 25.326 de Protección de los Datos Personales y el Código Civil y Comercial de la Nación. Si tenés dudas específicas sobre tu situación particular, te recomendamos consultar con un abogado.</p>
+      </div>
 
-    <div class="version-info">
-      <p><strong>Última actualización:</strong> 3 de julio de 2026</p>
-      <p>Esta página contiene los documentos legales requeridos para Google Play Console y está disponible públicamente bajo licencia MIT.</p>
-    </div>
+      <div class="version-info">
+        <p><strong>Última actualización:</strong> 3 de julio de 2026</p>
+        <p>Esta página contiene los documentos legales requeridos para Google Play Console y está disponible públicamente bajo licencia MIT.</p>
+      </div>
+    </section>
   </main>
 
   <footer>
